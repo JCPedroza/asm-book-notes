@@ -6,8 +6,7 @@ Notes for the ARM Book.
 
 ### Linux
 
-Download and install the [ARM Compiler for Linux][30], this will enable the
-`armclang` command.
+Download and install the [ARM Compiler for Linux][30].
 
 Then run:
 
@@ -18,16 +17,33 @@ apt install g++ gcc clang
 
 ## Compilation
 
+### C++
+
 ```bash
-# C++
+# With the G++ compiler
 g++ file.cpp
+```
 
-# C
+### C
+
+```bash
+# With the GCC compiler collection
 gcc file.c
-clang file.c
 
-# ARM
-armclang --target=aarch64-arm-none-eabi file.s
+# With the Clang compiler
+clang file.c
+```
+
+### ARM
+
+```bash
+# From an ARM machine
+as -o object.o file.s             # Generate object.o from file.s
+gcc -static -o exec.out object.o  # Generate exec.out from object.o
+
+# From a non-ARM machine
+aarch64-linux-gnu-as -o object.o file.s             # Generate object.o from file.s
+aarch64-linux-gnu-gcc -static -o exec.out object.o  # Generate object.o from file.s
 ```
 
 ---
