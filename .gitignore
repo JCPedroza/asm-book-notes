@@ -1,5 +1,6 @@
 # Editors
 .vscode/
 
-# C
+# Compiling
 *.out
+*.o
