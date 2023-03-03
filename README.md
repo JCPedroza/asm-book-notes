@@ -21,29 +21,29 @@ apt install g++ gcc clang
 
 ```bash
 # With the G++ compiler
-g++ file.cpp
+g++ -o exec.out file.cpp
 ```
 
 ### C
 
 ```bash
 # With the GCC compiler collection
-gcc file.c
+gcc -o exec.out file.c
 
 # With the Clang compiler
-clang file.c
+clang -o exec.out file.c
 ```
 
 ### ARM
 
 ```bash
 # From an ARM machine
-as -o object.o file.s             # Generate object.o from file.s
-gcc -static -o exec.out object.o  # Generate exec.out from object.o
+as -o object.o file.s     # Generate object.o from file.s
+gcc -o exec.out object.o  # Generate exec.out from object.o
 
 # From a non-ARM machine
-aarch64-linux-gnu-as -o object.o file.s             # Generate object.o from file.s
-aarch64-linux-gnu-gcc -static -o exec.out object.o  # Generate object.o from file.s
+aarch64-linux-gnu-as -o object.o file.s     # Generate object.o from file.s
+aarch64-linux-gnu-gcc -o exec.out object.o  # Generate object.o from file.s
 ```
 
 ---
