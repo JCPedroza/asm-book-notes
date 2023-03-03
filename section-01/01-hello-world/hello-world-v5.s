@@ -7,7 +7,7 @@ main:
 top:
     ldr x0, [x21], 8  // argv++, old value in x0
     cbz x0, bottom    // if * argv == NULL goto bottom
-    b1 puts           // puts(*argv)
+    bl puts           // puts(*argv)
     b top             // goto top
 
 bottom:
