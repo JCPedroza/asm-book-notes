@@ -10,3 +10,6 @@ hello-world:
 	gcc hw-v2.c -o hw-v2.out
 	as hw-v3.s -o hw-v3.o
 	gcc hw-v3.o -o hw-v3.out
+
+clean:
+	rm *.o *.out
